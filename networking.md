@@ -23,19 +23,19 @@ A continuación, se detalla el procedimiento técnico para establecer una IP est
 
 **Paso 1: Identificar la interfaz de red**
 Primero, debemos identificar el nombre lógico de la interfaz de red puenteada (comúnmente `enp0s3`, `eth0`, etc.).
-\`\`\`bash
+```bash
 ip link show
-\`\`\`
+```
 
 **Paso 2: Crear / Editar el archivo de configuración YAML**
 Netplan utiliza archivos YAML ubicados en `/etc/netplan/`. Crearemos o editaremos el archivo de configuración principal (ej. `01-netcfg.yaml` o `50-cloud-init.yaml`).
-\`\`\`bash
+```bash
 sudo nano /etc/netplan/01-netcfg.yaml
-\`\`\`
+```
 
 **Paso 3: Estructura del archivo YAML**
 Aplicaremos la siguiente configuración, reemplazando la interfaz y la subred según la topología de la empresa:
-\`\`\`yaml
+```yaml
 network:
   version: 2
   renderer: networkd
@@ -49,24 +49,24 @@ network:
           via: 192.168.10.1
       nameservers:
         addresses: [8.8.8.8, 8.8.4.4]
-\`\`\`
+```
 *(Atención: Es vital respetar la indentación estricta de YAML, utilizando espacios y no tabulaciones).*
 
 **Paso 4: Probar la configuración**
 Antes de aplicar los cambios permanentemente, verificaremos que no haya errores de sintaxis y que la configuración no desconecte la sesión actual:
-\`\`\`bash
+```bash
 sudo netplan try
-\`\`\`
+```
 
 **Paso 5: Aplicar los cambios**
 Si la prueba es exitosa, aplicamos la configuración para que la IP estática se asigne a la interfaz:
-\`\`\`bash
+```bash
 sudo netplan apply
-\`\`\`
+```
 
 **Paso 6: Validar la nueva IP**
 Finalmente, confirmamos que la dirección IP estática se ha configurado correctamente y comprobamos la salida a la red:
-\`\`\`bash
+```bash
 ip a
 ping -c 4 8.8.8.8
-\`\`\`
+```
