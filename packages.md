@@ -52,6 +52,17 @@ apt-cache policy
 sudo apt install apache2 -y
 ```
 
+## 📊 4. Beneficios e Impacto Operativo
+
+> 💡 **Retorno Técnico:** Mayor estabilidad operacional, despliegues inmediatos y control total del ciclo de vida del software.
+
+| Indicador | Estado Actual (Manual) | Estado Propuesto (Mirror Local) |
+| :--- | :--- | :--- |
+| **Consumo de Ancho de Banda WAN** | 🔴 Alto (Múltiples descargas repetidas) | 🟢 Mínimo (Una sola descarga por paquete) |
+| **Velocidad de Despliegue** | 🔴 Lenta (Limitada por velocidad de internet) | 🟢 Ultrarrápida (A velocidad de red LAN) |
+| **Consistencia de Entornos** | 🔴 Desactualizada / Dispar | 🟢 100% Homologada en toda la empresa |
+| **Resolución de Dependencias** | 🔴 Propensa a errores humanos | 🟢 Automatizada mediante gestor `apt` |
+
 
 ```text
        [ 🌐 Internet / WAN ]
