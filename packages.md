@@ -18,7 +18,7 @@ Durante el diagnóstico de la infraestructura actual, detectamos tres puntos cr�
 
 Proponemos transformar el modelo de descarga individual en una **Arquitectura Centralizada de Repositorio Espejo Local**. 
 
-Un servidor interno actuará como el único nodo encargado de sincronizarse con los servidores oficiales de Ubuntu en internet durante horas no pico. Posteriormente, todos los servidores de la red de InnovaCloud Solutions descargarán sus actualizaciones directamente desde este nodo interno a velocidades de red local (LAN Gigabit)[cite: 1].
+Un servidor interno actuará como el único nodo encargado de sincronizarse con los servidores oficiales de Ubuntu en internet durante horas no pico. Posteriormente, todos los servidores de la red de InnovaCloud Solutions descargarán sus actualizaciones directamente desde este nodo interno a velocidades de red local (LAN Gigabit).
 
 ## 3. Implementación Paso a Paso (`apt`)
 
