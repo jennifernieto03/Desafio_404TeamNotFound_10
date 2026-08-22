@@ -63,5 +63,5 @@ Haz clic en cada enlace para revisar la solución detallada redactada por cada e
 
 > **Defensa Grabada:** Demostración en video mostrando la estructura del repositorio en GitHub y la explicación de las soluciones técnicas acordadas[cite: 1].
 
-* **Repositorio Oficial en GitHub:** `https://github.com/tu-usuario/Desafio_NombreEquipo_01`[cite: 1]
-* **Video de Defensa (Loom / Screenity):** `[Inserta aquí el enlace de tu video]`[cite: 1]
+* **Repositorio Oficial en GitHub:** `https://github.com/jennifernieto03/Desafio_404TeamNotFound_10/tree/main`
+* **Video de Defensa (Loom / Screenity):** `[Inserta aquí el enlace de tu video]`
