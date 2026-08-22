@@ -21,7 +21,7 @@ En este repositorio presentamos la propuesta técnica integral para diagnosticar
 
 | Integrante | Rol en la Consultoría |  Archivo Asignado |
 | :--- | :--- | :--- |
-| **a** | Líder de Proyecto / Arq. de Redes | `networking.md` |
+| **a** |  Arquitecto de Redes | `networking.md` |
 | **[Nombre Integrante 2]** | Especialista en Almacenamiento | `storage.md` |
 | **Valeria Melissa Hernández Duarte** | Analista de Gestión de Software | `packages.md`|
 | **[Nombre Integrante 4]** | Auditor/a de Diagnóstico y Sistemas | `diagnostics.md` |
