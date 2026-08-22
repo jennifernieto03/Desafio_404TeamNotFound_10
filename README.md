@@ -21,10 +21,9 @@ En este repositorio presentamos la propuesta técnica integral para diagnosticar
 
 | Integrante | Rol en la Consultoría |  Archivo Asignado |
 | :--- | :--- | :--- |
-| **a** |  Arquitecto de Redes | `networking.md` |
-| **[Nombre Integrante 2]** | Especialista en Almacenamiento | `storage.md` |
+| **Jennifer Alejandra Nieto Portillo** | Especialista en Almacenamiento y Arquitecto de Redes| `storage.md` `networking.md` |
 | **Valeria Melissa Hernández Duarte** | Analista de Gestión de Software | `packages.md`|
-| **[Nombre Integrante 4]** | Auditor/a de Diagnóstico y Sistemas | `diagnostics.md` |
+| **Josseline Berenice Barillas Alfaro** | Auditor/a de Diagnóstico y Sistemas | `diagnostics.md` |
 
 ---
 
