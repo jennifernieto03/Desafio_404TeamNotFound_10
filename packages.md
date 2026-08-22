@@ -20,6 +20,19 @@ Proponemos transformar el modelo de descarga individual en una **Arquitectura Ce
 
 Un servidor interno actuará como el único nodo encargado de sincronizarse con los servidores oficiales de Ubuntu en internet durante horas no pico. Posteriormente, todos los servidores de la red de InnovaCloud Solutions descargarán sus actualizaciones directamente desde este nodo interno a velocidades de red local (LAN Gigabit).
 
+
+```text
+       [ 🌐 Internet / WAN ]
+                 │
+                 ▼ (Sincronización única en horas no pico)
+       [ 🖥️ Servidor Mirror Local ]
+                 │
+  ┌──────────────┼──────────────┐  (Actualizaciones a velocidad LAN)
+  ▼              ▼              ▼
+[ 💻 VM 1 ]    [ 💻 VM 2 ]    [ 💻 VM 3 ]
+```
+
+
 ## 3. Implementación Paso a Paso (`apt`)
 
 💅 **Paso 1: Respaldo preventivo de seguridad**
@@ -52,9 +65,9 @@ apt-cache policy
 sudo apt install apache2 -y
 ```
 
-## 📊 4. Beneficios e Impacto Operativo
+## 4. Beneficios e Impacto Operativo
 
-> 💡 **Retorno Técnico:** Mayor estabilidad operacional, despliegues inmediatos y control total del ciclo de vida del software.
+>  **Retorno Técnico:** Mayor estabilidad operacional, despliegues inmediatos y control total del ciclo de vida del software.
 
 | Indicador | Estado Actual (Manual) | Estado Propuesto (Mirror Local) |
 | :--- | :--- | :--- |
@@ -63,16 +76,6 @@ sudo apt install apache2 -y
 | **Consistencia de Entornos** | 🔴 Desactualizada / Dispar | 🟢 100% Homologada en toda la empresa |
 | **Resolución de Dependencias** | 🔴 Propensa a errores humanos | 🟢 Automatizada mediante gestor `apt` |
 
-
-```text
-       [ 🌐 Internet / WAN ]
-                 │
-                 ▼ (Sincronización única en horas no pico)
-       [ 🖥️ Servidor Mirror Local ]
-                 │
-  ┌──────────────┼──────────────┐  (Actualizaciones a velocidad LAN)
-  ▼              ▼              ▼
-[ 💻 VM 1 ]    [ 💻 VM 2 ]    [ 💻 VM 3 ]
 
 
 
