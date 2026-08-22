@@ -53,10 +53,10 @@ En este repositorio presentamos la propuesta técnica integral para diagnosticar
 
 Haz clic en cada enlace para revisar la solución detallada redactada por cada especialista[cite: 1]:
 
-* [**Solución de Almacenamiento y Redundancia** (`storage.md`)](./storage.md)[cite: 1]
-* [**Gestión de Software y Repositorio Espejo** (`packages.md`)](./packages.md)[cite: 1]
-* [**Configuración de Red y Netplan** (`networking.md`)](./networking.md)[cite: 1]
-* [**Verificación y Diagnóstico de Servicios** (`diagnostics.md`)](./diagnostics.md)[cite: 1]
+* [**Solución de Almacenamiento y Redundancia** (`storage.md`)](./storage.md)
+* [**Gestión de Software y Repositorio Espejo** (`packages.md`)](./packages.md)
+* [**Configuración de Red y Netplan** (`networking.md`)](./networking.md)
+* [**Verificación y Diagnóstico de Servicios** (`diagnostics.md`)](./diagnostics.md)
 
 ---
 
