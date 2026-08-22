@@ -51,7 +51,7 @@ En este repositorio presentamos la propuesta técnica integral para diagnosticar
 
 ## 4. Módulos de Documentación Técnica
 
-Haz clic en cada enlace para revisar la solución detallada redactada por cada especialista[cite: 1]:
+Haz clic en cada enlace para revisar la solución detallada redactada por cada especialista:
 
 * [**Solución de Almacenamiento y Redundancia** (`storage.md`)](./storage.md)
 * [**Gestión de Software y Repositorio Espejo** (`packages.md`)](./packages.md)
