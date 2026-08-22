@@ -18,37 +18,37 @@ RAID 10 combina la creación de espejos (RAID 1 para redundancia) con la creaci�
 A continuación, se detalla la configuración técnica utilizando la herramienta de administración de software RAID `mdadm` en el entorno Linux de la empresa.
 
 **Paso 1: Instalación de la utilidad mdadm**
-\`\`\`bash
+```bash
 sudo apt update
 sudo apt install mdadm -y
-\`\`\`
+```
 
 **Paso 2: Creación del arreglo RAID 10**
 *(Nota: Este comando asume el uso de 4 discos del mismo tamaño identificados en el sistema como /dev/sdb, /dev/sdc, /dev/sdd y /dev/sde)*
-\`\`\`bash
+```bash
 sudo mdadm --create --verbose /dev/md0 --level=10 --raid-devices=4 /dev/sdb /dev/sdc /dev/sdd /dev/sde
-\`\`\`
+```
 
 **Paso 3: Verificación de la creación y estado del RAID**
-\`\`\`bash
+```bash
 cat /proc/mdstat
 sudo mdadm --detail /dev/md0
-\`\`\`
+```
 
 **Paso 4: Formateo con sistema de archivos ext4**
-\`\`\`bash
+```bash
 sudo mkfs.ext4 /dev/md0
-\`\`\`
+```
 
 **Paso 5: Montaje del volumen en el sistema**
-\`\`\`bash
+```bash
 sudo mkdir -p /mnt/innovacloud_data
 sudo mount /dev/md0 /mnt/innovacloud_data
-\`\`\`
+```
 
 **Paso 6: Configuración de persistencia (Automontaje tras reinicio)**
 Para asegurar que el sistema ensamble el RAID automáticamente cada vez que el servidor se reinicie:
-\`\`\`bash
+```bash
 # Guardar la configuración en mdadm.conf
 sudo mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
 
@@ -57,4 +57,4 @@ sudo update-initramfs -u
 
 # Agregar la entrada al archivo fstab
 echo '/dev/md0 /mnt/innovacloud_data ext4 defaults 0 0' | sudo tee -a /etc/fstab
-\`\`\`
+```
