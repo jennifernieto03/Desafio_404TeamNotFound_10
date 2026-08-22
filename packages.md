@@ -1,10 +1,10 @@
 #  Solución para la Gestión de Paquetes
 
-> ✨ **Objetivo:** Erradicar la instalación manual de dependencias, homologar los entornos de desarrollo/producción y optimizar el consumo de ancho de banda en la red de **InnovaCloud Solutions**.
+>  **Objetivo:** Erradicar la instalación manual de dependencias, homologar los entornos de desarrollo/producción y optimizar el consumo de ancho de banda en la red de **InnovaCloud Solutions**.
 
 ---
 
-## 🔍 1. Análisis Técnico de la Problemática
+##  1. Análisis Técnico de la Problemática
 
 Durante el diagnóstico de la infraestructura actual, detectamos tres puntos críticos provocados por la gestión manual de software:
 
@@ -19,3 +19,45 @@ Durante el diagnóstico de la infraestructura actual, detectamos tres puntos cr�
 Proponemos transformar el modelo de descarga individual en una **Arquitectura Centralizada de Repositorio Espejo Local**. 
 
 Un servidor interno actuará como el único nodo encargado de sincronizarse con los servidores oficiales de Ubuntu en internet durante horas no pico. Posteriormente, todos los servidores de la red de InnovaCloud Solutions descargarán sus actualizaciones directamente desde este nodo interno a velocidades de red local (LAN Gigabit)[cite: 1].
+
+```text
+       [ 🌐 Internet / WAN ]
+                 │
+                 ▼ (Sincronización única en horas no pico)
+       [ 🖥️ Servidor Mirror Local ]
+                 │
+  ┌──────────────┼──────────────┐  (Actualizaciones a velocidad LAN)
+  ▼              ▼              ▼
+[ 💻 VM 1 ]    [ 💻 VM 2 ]    [ 💻 VM 3 ]
+
+## 🛠️ 3. Implementación Paso a Paso (`apt`)
+
+ **Paso 1: Respaldo preventivo de seguridad**
+
+```bash
+# 1. Respaldo de seguridad de la lista actual de repositorios
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup_$(date +%F)
+```
+
+ **Paso 2: Redirección hacia el Mirror Local** *(Asumiendo IP interna 192.168.10.50)*
+
+```bash
+# 2. Configuración de repositorios apuntando al espejo local
+echo "deb [http://192.168.10.50/ubuntu/](http://192.168.10.50/ubuntu/) jammy main restricted universe multiverse" | sudo tee /etc/apt/sources.list
+echo "deb [http://192.168.10.50/ubuntu/](http://192.168.10.50/ubuntu/) jammy-security main restricted universe multiverse" | sudo tee -a /etc/apt/sources.list
+```
+
+ **Paso 3: Sincronización e inspección del gestor**
+
+```bash
+# 3. Sincronización del índice de paquetes e inspección de política
+sudo apt update
+apt-cache policy
+```
+
+ **Paso 4: Prueba de instalación y validación**
+
+```bash
+# 4. Instalación de paquete de prueba para validar la descarga desde LAN
+sudo apt install apache2 -y
+```
