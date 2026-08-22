@@ -19,7 +19,7 @@ En este repositorio presentamos la propuesta técnica integral para diagnosticar
 
 ## 2. Integrantes del Equipo y Roles
 
-| Integrante | Rol en la Consultoría | Sección / Archivo Asignado |
+| Integrante | Rol en la Consultoría |  Archivo Asignado |
 | :--- | :--- | :--- |
 | **a** | Líder de Proyecto / Arq. de Redes | `networking.md` |
 | **[Nombre Integrante 2]** | Especialista en Almacenamiento | `storage.md` |
@@ -42,10 +42,10 @@ En este repositorio presentamos la propuesta técnica integral para diagnosticar
  Redundancia      Homologación LAN           IP Estática / LAN    Auditoría Activa
 ```
 
-1. **Almacenamiento (`storage.md`):** Implementación de **RAID 5** con `mdadm` para garantizar redundancia de datos ante fallos de disco en los servidores principales[cite: 1].
-2. **Gestión de Software (`packages.md`):** Configuración de un **Repositorio Espejo (Mirror) Local** con `apt` para erradicar la instalación manual y optimizar el ancho de banda WAN[cite: 1].
-3. **Configuración de Red (`networking.md`):** Migración del modo NAT a **Adaptador Puente (Bridged)** en VirtualBox y asignación de IP estática con **Netplan** para la red de desarrollo[cite: 1].
-4. **Diagnóstico y Control (`diagnostics.md`):** Protocolo estandarizado de auditoría con herramientas nativas de consola (`ip`, `ss`, `ping`, `systemctl`) para monitoreo continuo[cite: 1].
+1. **Almacenamiento (`storage.md`):** Implementación de **RAID 5** con `mdadm` para garantizar redundancia de datos ante fallos de disco en los servidores principales.
+2. **Gestión de Software (`packages.md`):** Configuración de un **Repositorio Espejo (Mirror) Local** con `apt` para erradicar la instalación manual y optimizar el ancho de banda WAN.
+3. **Configuración de Red (`networking.md`):** Migración del modo NAT a **Adaptador Puente (Bridged)** en VirtualBox y asignación de IP estática con **Netplan** para la red de desarrollo.
+4. **Diagnóstico y Control (`diagnostics.md`):** Protocolo estandarizado de auditoría con herramientas nativas de consola (`ip`, `ss`, `ping`, `systemctl`) para monitoreo continuo.
 
 ---
 
