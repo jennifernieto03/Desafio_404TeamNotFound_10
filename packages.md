@@ -35,7 +35,7 @@ Un servidor interno actuará como el único nodo encargado de sincronizarse con 
 
 ## 3. Implementación Paso a Paso (`apt`)
 
-💅 **Paso 1: Respaldo preventivo de seguridad**
+ **Paso 1: Respaldo preventivo de seguridad**
 
 ```bash
 #  Respaldo de seguridad de la lista actual de repositorios
